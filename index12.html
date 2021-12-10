@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        :root {
+            --box-size: 50px;
+        }
+
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box;
+        }
+
+        .animation-container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            padding: 0.2em;
+        }
+
+        .animation-container div {
+            width: var(--box-size);
+            height: var(--box-size);
+            background-color: red;
+            position: absolute;
+            transform: rotate(0deg);
+            animation-name: example;
+            animation-duration: 4s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes example {
+            0% {
+                left: 0;
+                top: 0;
+                transform: rotate(0deg);
+                background-color: red;
+            }
+
+            25% {
+                background-color: yellow;
+                left: calc(100% - var(--box-size));
+                width: calc(var(--box-size) * 1.5);
+                height: calc(var(--box-size) * 1.5);
+                top: 0;
+                transform: rotate(90deg);
+            }
+
+            50% {
+                left: 0;
+                top: calc(100% - var(--box-size));
+                width: var(--box-size);
+                height: var(--box-size);
+                transform: rotate(180deg);
+                background-color: pink;
+            }
+
+            75% {
+                left: calc(100% - var(--box-size));
+                top: calc(100% - var(--box-size));
+                width: calc(var(--box-size) * 1.5);
+                height: calc(var(--box-size) * 1.5);
+                transform: rotate(270deg);
+                background-color: green;
+            }
+
+            100% {
+                left: 0;
+                top: 0;
+                width: var(--box-size);
+                height: var(--box-size);
+                transform: rotate(360deg);
+                background-color: violet;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a href="file:///C:/Users/Faraz/Documents/HTML%20Files/index10.html">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </header>    
+    <div class="animation-container">
+        <div></div>
+    </div>
+    <p><b>Note:</b> When an animation is finished, it goes back to its original style.</p>
+</body>
+</html>
